@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShootingRange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="target" translatesAutoresizingMaskIntoConstraints="NO" id="vgn-sv-36p">
+                                <rect key="frame" x="137.5" y="293.5" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="E87-J5-XRl"/>
+                                    <constraint firstAttribute="height" constant="100" id="UWE-U0-Wan"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfs-sq-dKA">
+                                <rect key="frame" x="157.5" y="409" width="60" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="ugF-Gm-fLH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Arf-nZ-9TU" kind="presentation" modalTransitionStyle="crossDissolve" id="bpG-E8-N7a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vgn-sv-36p" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9FS-PT-buV"/>
+                            <constraint firstItem="Bfs-sq-dKA" firstAttribute="top" secondItem="vgn-sv-36p" secondAttribute="bottom" constant="15.5" id="FJw-eA-g4j"/>
+                            <constraint firstItem="Bfs-sq-dKA" firstAttribute="centerX" secondItem="vgn-sv-36p" secondAttribute="centerX" id="goW-zm-KTc"/>
+                            <constraint firstItem="vgn-sv-36p" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="prG-Ay-rQq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="26.53673163418291"/>
+        </scene>
+        <!--Shooting View Controller-->
+        <scene sceneID="Msx-us-0ZK">
+            <objects>
+                <viewController id="Arf-nZ-9TU" customClass="ShootingViewController" customModule="ShootingRange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="et6-bq-TJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkb-8g-TSJ">
+                                <rect key="frame" x="151.5" y="610" width="72" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="csT-22-8hS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeG-06-Ftg">
+                                <rect key="frame" x="137.5" y="80" width="100" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="hAM-Ex-mSH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="47"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LeG-06-Ftg" firstAttribute="top" secondItem="fbI-1M-14P" secondAttribute="top" constant="60" id="4y5-mv-F4v"/>
+                            <constraint firstItem="fbI-1M-14P" firstAttribute="bottom" secondItem="tkb-8g-TSJ" secondAttribute="bottom" constant="15" id="CX0-RL-EvI"/>
+                            <constraint firstItem="tkb-8g-TSJ" firstAttribute="centerX" secondItem="fbI-1M-14P" secondAttribute="centerX" id="KBT-Zs-Ewh"/>
+                            <constraint firstItem="LeG-06-Ftg" firstAttribute="centerX" secondItem="fbI-1M-14P" secondAttribute="centerX" id="oFj-xu-lIT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fbI-1M-14P"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="tkb-8g-TSJ" id="a7Z-Fs-Xpd"/>
+                        <outlet property="shootedCountLabel" destination="LeG-06-Ftg" id="R0V-0h-dig"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMZ-h0-iQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="target" width="71.5" height="71"/>
+    </resources>
+</document>

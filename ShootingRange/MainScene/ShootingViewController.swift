@@ -44,7 +44,8 @@ class ShootingViewController: UIViewController {
     }
     
     private func bindTheLabel() {
-        viewModel.shotInTargetCount.subscribe(onNext: { value in
+        viewModel.shotInTargetCount.subscribe(onNext: { [weak self] value in
+            guard let `self` = self else { return }
             DispatchQueue.main.async {
                 self.shootedCountLabel.text = "\(value)"
                 self.playSound()

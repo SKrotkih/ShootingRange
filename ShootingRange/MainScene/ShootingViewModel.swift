@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 class ShootingViewModel {
-
-   var shotInTargetCount = PublishSubject<Int>()
+    
+    var shotInTargetCount = PublishSubject<Int>()
     private let model = Model()
     private let disposeBag = DisposeBag()
     
@@ -20,7 +20,7 @@ class ShootingViewModel {
         bindHitTargetEvent()
         model.startGame()
     }
-
+    
     func stopGame() {
         model.stopGame()
     }
@@ -30,7 +30,7 @@ class ShootingViewModel {
             shotInTargetCount.onNext(_shotInTargetCount)
         }
     }
-
+    
     // Subscribe on the model's events like a "target hit"
     private func bindHitTargetEvent() {
         model.targetHit.subscribe(onNext: { [weak self] value in
@@ -42,5 +42,4 @@ class ShootingViewModel {
             }
         }).disposed(by: disposeBag)
     }
-
 }

@@ -78,7 +78,7 @@ extension Model {
         let delayInSec = Double.random(in: 0.1...0.5)
         
         background.asyncAfter(deadline: .now() + delayInSec) { [weak self] in
-            guard let self = self else {
+            guard let `self` = self else {
                 return
             }
             self.addTarget()
@@ -96,8 +96,8 @@ extension Model {
     
     // go to create the next target
     private func subscribeOnNewTarget() {
-        targetIsReady.subscribe(onNext: { value in
-            self.generateNewTarget()
+        targetIsReady.subscribe(onNext: { [weak self] value in
+            self?.generateNewTarget()
         }).disposed(by: disposeBag)
     }
 }
@@ -113,7 +113,7 @@ extension Model {
         }
         let delayInSec = Double.random(in: 0.1...0.5)
         background.asyncAfter(deadline: .now() + delayInSec) { [weak self] in
-            guard let self = self else {
+            guard let `self` = self else {
                 return
             }
             self.makeShot()
